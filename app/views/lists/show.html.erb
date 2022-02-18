@@ -7,7 +7,7 @@
 <%= link_to "Back to lists", lists_path, :class => "btn btn-danger text-white"%>
 <div class="row d-flex justify-content-center">
   <% @list.bookmarks.each do |bookmark| %>
-    <div class="col-6 col-sm-3 my-3">
+    <div class="col-12 col-sm-6 my-3">
       <div class="card">
         <div class="card-image" style="background-image: url(<%= bookmark.movie.poster_url%>);">
         </div>
