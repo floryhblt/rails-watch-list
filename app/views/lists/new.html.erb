@@ -1,5 +1,14 @@
-
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.submit "Create list", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="navbar mx-10">
+    <h2 class="pt-3">Create a new movie list</h2>
+    <%= link_to "Back to lists", lists_path, :class => "btn btn-danger text-white"%>
+  </div>
+  <div class="row ">
+    <div class="col-4 my-3">
+      <%= simple_form_for @list do |f| %>
+        <%= f.input :name, :label => "What's the list name ?" %>
+        <%= f.submit "Create new list", class: "btn btn-success text-white mt-3" %>
+      <% end %>
+    </div>
+  </div>
+</div>
