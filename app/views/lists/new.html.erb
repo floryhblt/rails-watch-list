@@ -7,6 +7,7 @@
     <div class="col-4 my-3">
       <%= simple_form_for @list do |f| %>
         <%= f.input :name, :label => "What's the list name ?" %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit "Create new list", class: "btn btn-success text-white mt-3" %>
       <% end %>
     </div>

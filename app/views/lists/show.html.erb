@@ -1,11 +1,11 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.cinemonde.fr/medias-pages/cine-cluses/salle_1-20200626-131738.jpg);">
-    <h1>List <%= @list.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>');">
+    <h1><%= @list.name %></h1>
 </div>
 
 <div class="container my-5">
 <%= link_to "Add a movie", new_list_bookmark_path(@list), :class => "btn btn-success text-white" %>
 <%= link_to "Back to lists", lists_path, :class => "btn btn-danger text-white"%>
-<div class="row d-flex justify-content-around">
+<div class="row d-flex justify-content-center">
   <% @list.bookmarks.each do |bookmark| %>
     <div class="col-6 col-sm-3 my-3">
       <div class="card">
@@ -15,7 +15,8 @@
           <h5 class="card-title"><strong><%= bookmark.movie.title %></strong></h5>
           <div class="d-flex justify-content-between">
             <i class="fa-regular fa-star"></i>
-            <p class="card-rating">  <%= bookmark.movie.rating %></p>
+            <p class="card-rating">  
+            <%= bookmark.movie.rating %></p>
           </div>
         </div>
         <p class="card-overview"><%= bookmark.movie.overview %></p>

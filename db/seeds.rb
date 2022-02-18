@@ -23,5 +23,3 @@ movies.first(20).each do |movie|
 end
 
 puts "movies created! ..."
-
-

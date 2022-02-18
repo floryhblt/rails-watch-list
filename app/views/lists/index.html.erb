@@ -11,7 +11,7 @@
     <% @lists.each do |list| %>
       <div class="col-6 col-sm-3 my-3">
           <%= link_to list_path(list) do %>
-          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.sortiraparis.com/images/80/69688/676726-top-des-meilleures-salles-de-cinema-de-paris.jpg);">
+          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
             <div class="d-flex justify-content-center align-items-center h-100 text-white">
               <h5><%= list.name %></h5>
             </div>
